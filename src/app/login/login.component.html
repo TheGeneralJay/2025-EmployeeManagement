@@ -1,0 +1,18 @@
+<div>
+  <input
+    *ngIf="!login"
+    [(ngModel)]="email"
+    type="text"
+    placeholder="Email..."
+  />
+
+  <input [(ngModel)]="username" type="text" placeholder="Username..." />
+
+  <input [(ngModel)]="password" type="password" placeholder="Password..." />
+</div>
+
+<div>
+  <button (click)="confirm()">{{ login ? "Login" : "Register" }}</button>
+
+  <button (click)="login = !login">{{ login ? "Register" : "Login" }}</button>
+</div>
