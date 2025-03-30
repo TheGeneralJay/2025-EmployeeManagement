@@ -1,18 +1,22 @@
 <div>
-  <input
-    *ngIf="!login"
-    [(ngModel)]="email"
-    type="text"
-    placeholder="Email..."
-  />
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+    <div>
+      <label for="username-input">Username</label>
+      <input type="text" name="username-input" id="username-input" ngModel />
+    </div>
 
-  <input [(ngModel)]="username" type="text" placeholder="Username..." />
+    <div>
+      <label for="password-input">Password</label>
+      <input
+        type="password"
+        name="password-input"
+        id="password-input"
+        ngModel
+      />
+    </div>
 
-  <input [(ngModel)]="password" type="password" placeholder="Password..." />
-</div>
-
-<div>
-  <button (click)="confirm()">{{ login ? "Login" : "Register" }}</button>
-
-  <button (click)="login = !login">{{ login ? "Register" : "Login" }}</button>
+    <div>
+      <button>Login</button>
+    </div>
+  </form>
 </div>

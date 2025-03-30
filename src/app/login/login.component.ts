@@ -1,39 +1,60 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AuthenticationService } from './authentication.service';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
+import { gql, request } from 'graphql-request';
+import { Router } from '@angular/router';
+import { uri } from '../graphql/graphql.provider';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, CommonModule],
-  providers: [AuthenticationService],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
-  login: boolean = true;
-  username: string = "";
-  email: string = "";
-  password: string = "";
+  constructor(private router: Router) { }
 
-  constructor(private authService: AuthenticationService) {
+  // Login query function.
+  async login(usernameInput: String, passwordInput: String) {
 
+    // GQL query document to send to the API.
+    const document = gql`
+      query Login($username: String!, $password: String!) {
+        login(username: $username, password: $password ) {
+          username
+          email
+          password
+          created_at
+          updated_at
+        }
+      }
+    `
+    // Variables to use with the query document.
+    const variables = {
+      username: usernameInput,
+      password: passwordInput
+    }
+
+
+    const req = await request(
+      uri,
+      document,
+      variables
+    );
+
+    return req;
   }
 
-  ngOnInit() {
+  // Submit handler.
+  async onSubmit(loginForm: NgForm) {
+    const formInput = loginForm.form.value;
 
+    let login: any;
+    let res: String;
+
+    login = await this.login(formInput["username-input"], formInput["password-input"]);
+    res = login
+
+    console.log(res);
   }
-
-  confirm() {
-
-  }
-
-  saveUser(id: string, token: string) {
-    localStorage.setItem("USER_ID", id);
-    localStorage.setItem("USER_TOKEN", token);
-
-    this.authService.setUserId(id);
-  }
-
 }
