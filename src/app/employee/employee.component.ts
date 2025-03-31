@@ -1,28 +1,53 @@
 import { Component, Injectable, OnInit } from '@angular/core';
-import { ReactiveFormsModule, FormControl, FormGroup } from '@angular/forms';
+import { gql, request } from 'graphql-request';
 import { CommonModule } from '@angular/common';
-import { Employee, EmployeeService } from './employee.service';
 import { RouterLink, Router } from '@angular/router';
+import { uri } from '../graphql/graphql.provider';
 
 @Component({
   selector: 'app-employee',
-  imports: [ReactiveFormsModule, CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink],
   styleUrl: './employee.component.css',
   templateUrl: './employee.component.html'
 })
 @Injectable({providedIn: 'root'})
 export class EmployeeComponent implements OnInit {
-  employees: Employee[] = [];
+  employees: any;
 
-  constructor(private employeeService: EmployeeService, private router: Router) {};
+  constructor(private router: Router) {};
 
-  async ngOnInit(): Promise<void> {
-    await this.updateEmployees();
+  async ngOnInit() {
+    await this.getAllEmployees();
   }
 
-  async updateEmployees() {
-    const result = await this.employeeService.getEmployees();
+  async getAllEmployees() {
+    let req: any;
 
-    this.employees = result.getEmployees;
+    const document = gql`
+      query GetEmployees {
+        getEmployees {
+          first_name
+          last_name
+          email
+          gender
+          designation
+          salary
+          date_of_joining
+          department
+          employee_photo
+          created_at
+          updated_at
+        }
+      }
+    `
+
+    req = await request(
+      uri,
+      document
+    );
+
+    this.employees = req.getEmployees;
+
+    return req;
   }
 }

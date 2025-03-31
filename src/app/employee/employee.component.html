@@ -8,6 +8,7 @@
         <th>Last Name</th>
         <th>Email</th>
         <th>Department</th>
+        <th>Admin Actions</th>
       </tr>
     </thead>
 
@@ -17,9 +18,14 @@
         <td>{{ employee.last_name }}</td>
         <td>{{ employee.email }}</td>
         <td>{{ employee.department }}</td>
+        <th>
+          <button [routerLink]="['/employee/view-employee']">View</button>
+          <button [routerLink]="['/employee/update-employee']">Update</button>
+          <button [routerLink]="['/employee/delete-employee']">Delete</button>
+        </th>
       </tr>
     </tbody>
   </table>
 
-  <a [routerLink]=""></a>
+  <button [routerLink]="['/employee/create-employee']">Create Employee</button>
 </section>
