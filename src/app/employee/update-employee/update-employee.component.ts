@@ -53,8 +53,6 @@ export class UpdateEmployeeComponent implements OnInit {
       variables
     );
 
-    this.employee = req.getEmployeeById;
-
     return req;
   }
 
