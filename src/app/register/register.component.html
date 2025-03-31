@@ -1,6 +1,11 @@
-<h2>Login</h2>
+<h2>Register</h2>
 <div>
-  <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+  <form #register="ngForm" (ngSubmit)="onSubmit(register)">
+    <div>
+      <label for="email-input">Email</label>
+      <input type="text" name="email-input" id="email-input" ngModel />
+    </div>
+
     <div>
       <label for="username-input">Username</label>
       <input type="text" name="username-input" id="username-input" ngModel />
@@ -17,10 +22,7 @@
     </div>
 
     <div>
-      <button>Login</button>
+      <button>Register</button>
     </div>
   </form>
-
-  <br />
-  <a [routerLink]="['/register']">Register</a>
 </div>

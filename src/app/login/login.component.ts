@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { gql, request } from 'graphql-request';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { uri } from '../graphql/graphql.provider';
+import short from 'short-uuid';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -50,11 +51,22 @@ export class LoginComponent {
     const formInput = loginForm.form.value;
 
     let login: any;
-    let res: String;
+    let res: string;
+    let authEmail: string;
 
     login = await this.login(formInput["username-input"], formInput["password-input"]);
     res = login
+    authEmail = login.email;
 
     console.log(res);
+
+    if (res) {
+      const authId = short.generate();
+
+      localStorage.setItem("userEmail", authEmail);
+      localStorage.setItem("sessionId", authId);
+
+      this.router.navigate(["/employee"]);
+    }
   }
 }
