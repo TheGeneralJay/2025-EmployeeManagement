@@ -3,24 +3,49 @@
   <form #update_employee="ngForm" (ngSubmit)="onSubmit(update_employee)">
     <div>
       <label for="fName-input">First Name</label>
-      <input type="text" name="fName-input" id="fName-input" ngModel />
+      <input
+        type="text"
+        placeholder="{{ employee.first_name }}"
+        name="fName-input"
+        id="fName-input"
+        ngModel
+      />
 
       <label for="lName-input">Last Name</label>
-      <input type="text" name="lName-input" id="lName-input" ngModel />
+      <input
+        type="text"
+        placeholder="{{ employee.last_name }}"
+        name="lName-input"
+        id="lName-input"
+        ngModel
+      />
     </div>
 
     <div>
       <label for="email-input">Email</label>
-      <input type="text" name="email-input" id="email-input" ngModel />
+      <input
+        type="text"
+        placeholder="{{ employee.email }}"
+        name="email-input"
+        id="email-input"
+        ngModel
+      />
 
       <label for="gender-input">Gender</label>
-      <input type="text" name="gender-input" id="gender-input" ngModel />
+      <input
+        type="text"
+        placeholder="{{ employee.gender }}"
+        name="gender-input"
+        id="gender-input"
+        ngModel
+      />
     </div>
 
     <div>
       <label for="designation-input">Designation</label>
       <input
         type="text"
+        placeholder="{{ employee.designation }}"
         name="designation-input"
         id="designation-input"
         ngModel
@@ -29,6 +54,7 @@
       <label for="department-input">Department</label>
       <input
         type="text"
+        placeholder="{{ employee.department }}"
         name="department-input"
         id="department-input"
         ngModel
@@ -37,10 +63,22 @@
 
     <div>
       <label for="salary-input">Salary</label>
-      <input type="text" name="salary-input" id="salary-input" ngModel />
+      <input
+        type="text"
+        placeholder="{{ employee.salary }}"
+        name="salary-input"
+        id="salary-input"
+        ngModel
+      />
 
       <label for="photo-input">Employee Photo</label>
-      <input type="text" name="photo-input" id="photo-input" ngModel />
+      <input
+        type="text"
+        placeholder="{{ employee.employee_photo }}"
+        name="photo-input"
+        id="photo-input"
+        ngModel
+      />
     </div>
 
     <br />

@@ -13,11 +13,49 @@ import { uri } from '../../graphql/graphql.provider';
 export class UpdateEmployeeComponent implements OnInit {
   private activatedRoute = inject(ActivatedRoute);
   employeeId: any;
+  employee: any;
 
   constructor(private router: Router) {};
 
   async ngOnInit() {
     this.employeeId = this.activatedRoute.snapshot.params["id"];
+    this.employee = this.getEmployeeById(this.employeeId);
+  }
+
+  async getEmployeeById(employeeId: String) {
+    let req: any;
+
+    const document = gql`
+      query GetEmployeeById($ID: ID!) {
+        getEmployeeById(ID: $ID) {
+          first_name
+          last_name
+          email
+          gender
+          designation
+          salary
+          date_of_joining
+          department
+          employee_photo
+          created_at
+          updated_at
+        }
+      }
+    `
+
+    const variables = {
+      ID: employeeId
+    }
+
+    req = await request(
+      uri,
+      document,
+      variables
+    );
+
+    this.employee = req.getEmployeeById;
+
+    return req;
   }
 
   async updateEmployee(employeeId: String, updateInput: any) {
