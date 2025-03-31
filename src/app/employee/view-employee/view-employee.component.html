@@ -2,9 +2,9 @@
 <section>
   <h2>Employee Details</h2>
 
-  <table>
+  <table class="table table-bordered">
     <thead>
-      <tr>
+      <tr class="table-primary">
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -36,5 +36,7 @@
     </tbody>
   </table>
 
-  <button [routerLink]="['/employee']">Back</button>
+  <button id="view-back" class="btn btn-secondary" [routerLink]="['/employee']">
+    Back
+  </button>
 </section>

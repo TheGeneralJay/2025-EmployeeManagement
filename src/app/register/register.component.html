@@ -1,29 +1,56 @@
 <h2>Register</h2>
 <div>
-  <form #register="ngForm" (ngSubmit)="onSubmit(register)">
-    <div>
-      <label for="email-input">Email</label>
-      <input type="text" name="email-input" id="email-input" ngModel />
-    </div>
-
-    <div>
-      <label for="username-input">Username</label>
-      <input type="text" name="username-input" id="username-input" ngModel />
-    </div>
-
-    <div>
-      <label for="password-input">Password</label>
+  <form id="register-form" #register="ngForm" (ngSubmit)="onSubmit(register)">
+    <div class="form-group">
+      <label class="form-label" for="email-input">Email</label>
       <input
-        type="password"
-        name="password-input"
-        id="password-input"
+        type="text"
+        class="form-control"
+        name="email-input"
+        id="email-input"
+        required
         ngModel
       />
     </div>
 
     <div>
-      <button>Register</button>
+      <label class="form-label" for="username-input">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        name="username-input"
+        id="username-input"
+        required
+        ngModel
+      />
+    </div>
+
+    <div>
+      <label class="form-label" for="password-input">Password</label>
+      <input
+        type="password"
+        name="password-input"
+        class="form-control"
+        required
+        id="password-input"
+        ngModel
+      />
+    </div>
+
+    <br />
+    <div>
+      <button class="btn btn-success">Register</button>
     </div>
   </form>
-  <button [routerLink]="['/login']">Login</button>
+
+  <div id="login-note">
+    <p>Already have an account?</p>
+    <button
+      id="register-nav-btn"
+      class="btn btn-info"
+      [routerLink]="['/login']"
+    >
+      Login
+    </button>
+  </div>
 </div>

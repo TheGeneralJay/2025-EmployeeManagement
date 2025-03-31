@@ -1,59 +1,101 @@
 <app-navbar></app-navbar>
 <h2>Create Employee</h2>
 <div>
-  <form #create_employee="ngForm" (ngSubmit)="onSubmit(create_employee)">
-    <div>
-      <label for="fName-input">First Name</label>
-      <input type="text" name="fName-input" id="fName-input" ngModel />
-
-      <label for="lName-input">Last Name</label>
-      <input type="text" name="lName-input" id="lName-input" ngModel />
-    </div>
-
-    <div>
-      <label for="email-input">Email</label>
-      <input type="text" name="email-input" id="email-input" ngModel />
-
-      <label for="gender-input">Gender</label>
-      <input type="text" name="gender-input" id="gender-input" ngModel />
-    </div>
-
-    <div>
-      <label for="designation-input">Designation</label>
+  <form
+    id="create-emp-form"
+    #create_employee="ngForm"
+    (ngSubmit)="onSubmit(create_employee)"
+  >
+    <div class="form-group">
+      <label class="form-label" for="fName-input">First Name</label>
       <input
+        class="form-control"
+        type="text"
+        name="fName-input"
+        id="fName-input"
+        ngModel
+      />
+
+      <label class="form-label" for="lName-input">Last Name</label>
+      <input
+        class="form-control"
+        type="text"
+        name="lName-input"
+        id="lName-input"
+        ngModel
+      />
+
+      <label class="form-label" for="email-input">Email</label>
+      <input
+        class="form-control"
+        type="text"
+        name="email-input"
+        id="email-input"
+        ngModel
+      />
+
+      <label class="form-label" for="gender-input">Gender</label>
+      <input
+        class="form-control"
+        type="text"
+        name="gender-input"
+        id="gender-input"
+        ngModel
+      />
+
+      <label class="form-label" for="designation-input">Designation</label>
+      <input
+        class="form-control"
         type="text"
         name="designation-input"
         id="designation-input"
         ngModel
       />
 
-      <label for="department-input">Department</label>
+      <label class="form-label" for="department-input">Department</label>
       <input
+        class="form-control"
         type="text"
         name="department-input"
         id="department-input"
         ngModel
       />
-    </div>
 
-    <div>
-      <label for="salary-input">Salary</label>
-      <input type="text" name="salary-input" id="salary-input" ngModel />
+      <label class="form-label" for="salary-input">Salary</label>
+      <input
+        class="form-control"
+        type="text"
+        name="salary-input"
+        id="salary-input"
+        ngModel
+      />
 
-      <label for="photo-input">Employee Photo</label>
-      <input type="text" name="photo-input" id="photo-input" ngModel />
-    </div>
+      <label class="form-label" for="photo-input">Employee Photo</label>
+      <input
+        class="form-control"
+        type="text"
+        name="photo-input"
+        id="photo-input"
+        ngModel
+      />
 
-    <div>
-      <label for="doj-input">Date of Joining</label>
-      <input type="text" name="doj-input" id="doj-input" ngModel />
+      <label class="form-label" for="doj-input">Date of Joining</label>
+      <input
+        class="form-control"
+        type="text"
+        name="doj-input"
+        id="doj-input"
+        ngModel
+      />
     </div>
 
     <br />
     <div>
-      <button>Create Employee</button>
+      <button class="btn btn-success">Create Employee</button>
     </div>
   </form>
 
-  <button [routerLink]="['/employee']">Back</button>
+  <div class="back">
+    <button class="btn btn-secondary" [routerLink]="['/employee']">Back</button>
+  </div>
 </div>

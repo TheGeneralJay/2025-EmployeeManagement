@@ -2,7 +2,7 @@
 <section>
   <h2>Employees</h2>
 
-  <form #search="ngForm" (ngSubmit)="onSubmit(search)">
+  <form id="search-form" #search="ngForm" (ngSubmit)="onSubmit(search)">
     <input
       type="text"
       name="search-input"
@@ -14,9 +14,11 @@
     <button>Search</button>
   </form>
 
-  <table>
+  <br />
+
+  <table class="table table-bordered">
     <thead>
-      <tr>
+      <tr class="table-primary">
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -32,13 +34,25 @@
         <td>{{ employee.email }}</td>
         <td>{{ employee.department }}</td>
         <th>
-          <button [routerLink]="['/employee/view-employee', employee._id]">
+          <button
+            type="button"
+            class="btn btn-info admin-btns"
+            [routerLink]="['/employee/view-employee', employee._id]"
+          >
             View
           </button>
-          <button [routerLink]="['/employee/update-employee', employee._id]">
+          <button
+            type="button"
+            class="btn btn-warning admin-btns"
+            [routerLink]="['/employee/update-employee', employee._id]"
+          >
             Update
           </button>
-          <button [routerLink]="['/employee/delete-employee', employee._id]">
+          <button
+            type="button"
+            class="btn btn-danger admin-btns"
+            [routerLink]="['/employee/delete-employee', employee._id]"
+          >
             Delete
           </button>
         </th>
@@ -46,5 +60,12 @@
     </tbody>
   </table>
 
-  <button [routerLink]="['/employee/create-employee']">Create Employee</button>
+  <button
+    id="create-btn"
+    type="button"
+    class="btn btn-success"
+    [routerLink]="['/employee/create-employee']"
+  >
+    Create Employee
+  </button>
 </section>

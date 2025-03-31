@@ -93,7 +93,5 @@ export class EmployeeComponent implements OnInit {
 
     filter = await this.getEmployeeByDesc(formInput["search-input"]);
     res = filter;
-
-    console.log(res);
   }
 }

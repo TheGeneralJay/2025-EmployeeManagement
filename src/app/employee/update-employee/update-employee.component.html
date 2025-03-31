@@ -1,80 +1,86 @@
 <app-navbar></app-navbar>
 <h2>Update Employee</h2>
 <div>
-  <form #update_employee="ngForm" (ngSubmit)="onSubmit(update_employee)">
-    <div>
-      <label for="fName-input">First Name</label>
+  <form
+    id="update-emp-form"
+    #update_employee="ngForm"
+    (ngSubmit)="onSubmit(update_employee)"
+  >
+    <div class="form-group">
+      <label class="form-label" for="fName-input">First Name</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.first_name }}"
         name="fName-input"
         id="fName-input"
         ngModel
       />
 
-      <label for="lName-input">Last Name</label>
+      <label class="form-label" for="lName-input">Last Name</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.last_name }}"
         name="lName-input"
         id="lName-input"
         ngModel
       />
-    </div>
 
-    <div>
-      <label for="email-input">Email</label>
+      <label class="form-label" for="email-input">Email</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.email }}"
         name="email-input"
         id="email-input"
         ngModel
       />
 
-      <label for="gender-input">Gender</label>
+      <label class="form-label" for="gender-input">Gender</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.gender }}"
         name="gender-input"
         id="gender-input"
         ngModel
       />
-    </div>
 
-    <div>
-      <label for="designation-input">Designation</label>
+      <label class="form-label" for="designation-input">Designation</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.designation }}"
         name="designation-input"
         id="designation-input"
         ngModel
       />
 
-      <label for="department-input">Department</label>
+      <label class="form-label" for="department-input">Department</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.department }}"
         name="department-input"
         id="department-input"
         ngModel
       />
-    </div>
 
-    <div>
-      <label for="salary-input">Salary</label>
+      <label class="form-label" for="salary-input">Salary</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.salary }}"
         name="salary-input"
         id="salary-input"
         ngModel
       />
 
-      <label for="photo-input">Employee Photo</label>
+      <label class="form-label" for="photo-input">Employee Photo</label>
       <input
         type="text"
+        class="form-control"
         placeholder="{{ employee.employee_photo }}"
         name="photo-input"
         id="photo-input"
@@ -82,11 +88,12 @@
       />
     </div>
 
-    <br />
     <div>
-      <button>Update Employee</button>
+      <button id="update-btn" class="btn btn-success">Update</button>
     </div>
   </form>
 
-  <button [routerLink]="['/employee']">Back</button>
+  <div class="back">
+    <button class="btn btn-secondary" [routerLink]="['/employee']">Back</button>
+  </div>
 </div>

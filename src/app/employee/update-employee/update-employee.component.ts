@@ -21,6 +21,8 @@ export class UpdateEmployeeComponent implements OnInit {
   async ngOnInit() {
     this.employeeId = this.activatedRoute.snapshot.params["id"];
     this.employee = this.getEmployeeById(this.employeeId);
+
+    console.log(this.employee);
   }
 
   async getEmployeeById(employeeId: String) {
@@ -53,6 +55,9 @@ export class UpdateEmployeeComponent implements OnInit {
       document,
       variables
     );
+
+
+    this.employee = req.getEmployeeById;
 
     return req;
   }

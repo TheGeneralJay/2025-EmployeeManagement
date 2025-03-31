@@ -1,5 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   width: 80%;
-  margin: 0px auto;
+  margin: 20px auto;
+  border: 2px solid grey;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+#login-btn {
+  width: 150px;
+}
+
+#register-nav-btn {
+  width: 150px;
+}
+
+#search-form {
+  margin: auto;
+  width: 80%;
+  text-align: center;
+}
+
+#search-input {
+  width: 80%;
+}
+
+#login-form, #register-form, #login-note, #register-note {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: 50%;
+  border: 1px solid black;
+}
+
+#register-note > p, #login-note > p {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+ul {
+  padding: 10px;
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+}
+
+ul > li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+#logout-btn {
+  float: right;
+}
+
+section {
+  margin: auto;
+  text-align: center;
+}
+
+#create-btn, #update-btn {
+  margin: 10px;
+}
+
+#create-emp-form, #update-emp-form {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: 50%;
+  border: 1px solid black;
+}
+
+.back {
+  margin: auto;
+  text-align: center;
+  padding: 10px;
+  width: 50%;
+  border: 1px solid black;
+}
+
+#view-back, #del-back {
+  margin: 10px;
+}
+
+.admin-btns {
+  margin-right: 10px;
+}
+
+button {
+  width: 150px;
 }

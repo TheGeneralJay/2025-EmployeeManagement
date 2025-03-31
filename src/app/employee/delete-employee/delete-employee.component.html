@@ -2,9 +2,9 @@
 <section>
   <h2>Delete Employee</h2>
 
-  <table>
+  <table class="table table-bordered">
     <thead>
-      <tr>
+      <tr class="table-primary">
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
@@ -36,6 +36,22 @@
     </tbody>
   </table>
 
-  <button (click)="deleteEmployee(employee._id)">Delete Employee</button>
-  <button [routerLink]="['/employee']">Back</button>
+  <button
+    type="button"
+    class="btn btn-danger"
+    (click)="deleteEmployee(employee._id)"
+  >
+    Delete Employee
+  </button>
+
+  <br />
+
+  <button
+    id="del-back"
+    type="button"
+    class="btn btn-secondary"
+    [routerLink]="['/employee']"
+  >
+    Back
+  </button>
 </section>
