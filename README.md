@@ -2,21 +2,21 @@
 
 ## TODO:
 
-- [ ] Routing and Navigation.
-  - [ ] Use `Router` for login.
-  - [ ] Use `Router` for signup.
-  - [ ] Use `Router` for employee components.
+- [x] Routing and Navigation.
+  - [x] Use `Router` for login.
+  - [x] Use `Router` for signup.
+  - [x] Use `Router` for employee components.
 - [ ] Login and Signup Screens.
   - [ ] Form validations on login.
   - [ ] Form validations on signup.
-  - [ ] Use `Reactive` or `template forms` components to manage input states.
+  - [x] Use `Reactive` or `template forms` components to manage input states.
 - [ ] Session Management.
   - [ ] Store user session token in `service or dependency injection` to persist authentication.
 - [ ] Employee Management.
   - [ ] After login, send user to `Employee List` screen (tabular format).
   - [ ] Apply CRUD operations from assignment 1 backend.
-    - [ ] Add Employee.
-    - [ ] View Details.
+    - [x] Add Employee.
+    - [x] View Details.
     - [ ] Update Information.
     - [ ] Delete Employee.
 - [ ] Search and File Upload Functionality.
