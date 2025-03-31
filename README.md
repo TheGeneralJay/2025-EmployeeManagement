@@ -14,6 +14,4 @@
 
 ![update](https://github.com/user-attachments/assets/4702f246-b874-405c-8b18-1568b4497d53)
 
-![update](https://github.com/user-attachments/assets/8c1ae12b-e394-456f-8dc0-6ff66fdaa234)
-
 ![search](https://github.com/user-attachments/assets/1c062679-99cd-4392-998e-9badf2d5a506)
