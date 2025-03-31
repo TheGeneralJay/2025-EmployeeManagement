@@ -1,0 +1,26 @@
+<h2>Login</h2>
+<div>
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)">
+    <div>
+      <label for="username-input">Username</label>
+      <input type="text" name="username-input" id="username-input" ngModel />
+    </div>
+
+    <div>
+      <label for="password-input">Password</label>
+      <input
+        type="password"
+        name="password-input"
+        id="password-input"
+        ngModel
+      />
+    </div>
+
+    <div>
+      <button>Login</button>
+    </div>
+  </form>
+
+  <br />
+  <a [routerLink]="['/register']">Register</a>
+</div>
