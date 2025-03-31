@@ -26,6 +26,7 @@ export class EmployeeComponent implements OnInit {
     const document = gql`
       query GetEmployees {
         getEmployees {
+          _id
           first_name
           last_name
           email
@@ -47,7 +48,6 @@ export class EmployeeComponent implements OnInit {
     );
 
     this.employees = req.getEmployees;
-
     return req;
   }
 }

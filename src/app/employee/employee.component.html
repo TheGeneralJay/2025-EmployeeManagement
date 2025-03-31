@@ -19,9 +19,15 @@
         <td>{{ employee.email }}</td>
         <td>{{ employee.department }}</td>
         <th>
-          <button [routerLink]="['/employee/view-employee']">View</button>
-          <button [routerLink]="['/employee/update-employee']">Update</button>
-          <button [routerLink]="['/employee/delete-employee']">Delete</button>
+          <button [routerLink]="['/employee/view-employee', employee._id]">
+            View
+          </button>
+          <button [routerLink]="['/employee/update-employee', employee._id]">
+            Update
+          </button>
+          <button [routerLink]="['/employee/delete-employee', employee._id]">
+            Delete
+          </button>
         </th>
       </tr>
     </tbody>

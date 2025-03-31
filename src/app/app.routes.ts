@@ -13,7 +13,7 @@ export const routes: Routes = [
   {path: "register", component: RegisterComponent},
   {path: "employee", component: EmployeeComponent},
   {path: "employee/create-employee", component: CreateEmployeeComponent},
-  {path: "employee/delete-employee", component: DeleteEmployeeComponent},
-  {path: "employee/update-employee", component: UpdateEmployeeComponent},
-  {path: "employee/view-employee", component: ViewEmployeeComponent}
+  {path: "employee/delete-employee/:id", component: DeleteEmployeeComponent},
+  {path: "employee/update-employee/:id", component: UpdateEmployeeComponent},
+  {path: "employee/view-employee/:id", component: ViewEmployeeComponent}
 ];
