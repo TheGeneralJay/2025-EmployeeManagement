@@ -26,3 +26,7 @@
 
 ## Search
 ![search](https://github.com/user-attachments/assets/1c062679-99cd-4392-998e-9badf2d5a506)
+
+## Screenshot of MongoDB
+![MongoDB Screenshot](https://github.com/user-attachments/assets/64bacbb5-baf5-4962-a51a-a236ff9a7915)
+
