@@ -24,6 +24,7 @@
     "apollo-angular": "^10.0.3",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "firebase": "^11.6.0",
     "graphql": "^16.10.0",
     "graphql-request": "^7.1.2",
     "rxjs": "~7.8.0",

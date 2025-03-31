@@ -3,7 +3,7 @@ import { ApolloClientOptions, InMemoryCache } from '@apollo/client/core';
 import { Apollo, APOLLO_OPTIONS } from 'apollo-angular';
 import { HttpLink } from 'apollo-angular/http';
 
-export const uri = `http://localhost:4000/graphql`;
+export const uri = `https://one01443253-comp3133-101443253.onrender.com/graphql`;
 
 export function apolloOptionsFactory(): ApolloClientOptions<any> {
   const httpLink = inject(HttpLink);
