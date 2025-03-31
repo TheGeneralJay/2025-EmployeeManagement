@@ -1,0 +1,12 @@
+<div>
+  <ul>
+    <li>
+      <h3 *ngIf="username != undefined">Welcome, {{ username }}!</h3>
+      <h3 *ngIf="username == undefined">Welcome!</h3>
+    </li>
+
+    <li *ngIf="loggedIn" id="logout-btn">
+      <button (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</div>

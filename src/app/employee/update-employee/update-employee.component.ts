@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
+import { NavbarComponent } from '../../navbar/navbar.component';
 import { gql, request } from 'graphql-request';
 import { FormsModule, NgForm } from '@angular/forms';
 import { uri } from '../../graphql/graphql.provider';
 
 @Component({
   selector: 'app-update-employee',
-  imports: [FormsModule, RouterLink],
+  imports: [NavbarComponent, FormsModule, RouterLink],
   templateUrl: './update-employee.component.html',
   styleUrl: './update-employee.component.css'
 })

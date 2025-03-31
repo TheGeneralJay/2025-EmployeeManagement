@@ -16,7 +16,7 @@ export class LoginComponent {
   constructor(private router: Router) { }
 
   // Login query function.
-  async login(usernameInput: String, passwordInput: String) {
+  async login(usernameInput: string, passwordInput: string) {
 
     // GQL query document to send to the API.
     const document = gql`
@@ -43,6 +43,8 @@ export class LoginComponent {
       variables
     );
 
+    // Save username.
+    localStorage.setItem("user", usernameInput);
     return req;
   }
 
@@ -52,18 +54,14 @@ export class LoginComponent {
 
     let login: any;
     let res: string;
-    let authEmail: string;
 
     login = await this.login(formInput["username-input"], formInput["password-input"]);
     res = login
-    authEmail = login.email;
-
-    console.log(res);
 
     if (res) {
       const authId = short.generate();
 
-      localStorage.setItem("userEmail", authEmail);
+      localStorage.setItem("loggedIn", "true");
       localStorage.setItem("sessionId", authId);
 
       this.router.navigate(["/employee"]);

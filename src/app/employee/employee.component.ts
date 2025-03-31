@@ -3,10 +3,12 @@ import { gql, request } from 'graphql-request';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { uri } from '../graphql/graphql.provider';
+import { NavbarComponent } from '../navbar/navbar.component';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-employee',
-  imports: [CommonModule, RouterLink],
+  imports: [NavbarComponent, CommonModule, RouterLink, FormsModule],
   styleUrl: './employee.component.css',
   templateUrl: './employee.component.html'
 })
@@ -51,5 +53,47 @@ export class EmployeeComponent implements OnInit {
 
     this.employees = req.getEmployees;
     return req;
+  }
+
+  async getEmployeeByDesc(desigOrDept: String) {
+    let req: any;
+
+    const document = gql`
+      query GetEmployeeByDesc($designationOrDepartment: String!) {
+        getEmployeeByDesc(designationOrDepartment: $designationOrDepartment) {
+          _id
+          first_name
+          last_name
+          email
+          department
+        }
+      }
+    `
+    const variables = {
+      designationOrDepartment: desigOrDept
+    }
+
+    req = await request(
+      uri,
+      document,
+      variables
+    );
+
+    this.employees = req.getEmployeeByDesc;
+    return req;
+  }
+
+  async onSubmit(search: NgForm) {
+    const formInput = search.form.value;
+
+    let filter: any;
+    let res: string;
+
+    console.log(formInput["search-input"]);
+
+    filter = await this.getEmployeeByDesc(formInput["search-input"]);
+    res = filter;
+
+    console.log(res);
   }
 }

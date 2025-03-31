@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { gql, request } from 'graphql-request';
 import { FormsModule, NgForm } from '@angular/forms';
+import { NavbarComponent } from '../../navbar/navbar.component';
 import { uri } from '../../graphql/graphql.provider';
 
 @Component({
   selector: 'app-create-employee',
-  imports: [FormsModule, RouterLink],
+  imports: [NavbarComponent, FormsModule, RouterLink],
   templateUrl: './create-employee.component.html',
   styleUrl: './create-employee.component.css'
 })

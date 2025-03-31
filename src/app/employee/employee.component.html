@@ -1,5 +1,18 @@
+<app-navbar></app-navbar>
 <section>
   <h2>Employees</h2>
+
+  <form #search="ngForm" (ngSubmit)="onSubmit(search)">
+    <input
+      type="text"
+      name="search-input"
+      id="search-input"
+      placeholder="Department or Designation..."
+      ngModel
+    />
+
+    <button>Search</button>
+  </form>
 
   <table>
     <thead>

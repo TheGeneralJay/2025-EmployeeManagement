@@ -1,0 +1,12 @@
+ul {
+  border: 2px solid black;
+}
+
+ul > li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+#logout-btn {
+  float: right;
+}

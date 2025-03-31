@@ -1,12 +1,13 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { NavbarComponent } from '../../navbar/navbar.component';
 import { gql, request } from 'graphql-request';
 import { uri } from '../../graphql/graphql.provider';
 
 @Component({
   selector: 'app-view-employee',
-  imports: [CommonModule, RouterLink],
+  imports: [NavbarComponent, CommonModule, RouterLink],
   templateUrl: './view-employee.component.html',
   styleUrl: './view-employee.component.css'
 })

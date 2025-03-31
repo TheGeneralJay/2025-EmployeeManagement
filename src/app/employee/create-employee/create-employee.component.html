@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <h2>Create Employee</h2>
 <div>
   <form #create_employee="ngForm" (ngSubmit)="onSubmit(create_employee)">
@@ -53,4 +54,6 @@
       <button>Create Employee</button>
     </div>
   </form>
+
+  <button [routerLink]="['/employee']">Back</button>
 </div>

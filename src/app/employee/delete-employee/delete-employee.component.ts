@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { gql, request } from 'graphql-request';
+import { NavbarComponent } from '../../navbar/navbar.component';
 import { RouterLink, Router, ActivatedRoute } from '@angular/router';
 import { uri } from '../../graphql/graphql.provider';
 
 @Component({
   selector: 'app-delete-employee',
-  imports: [RouterLink],
+  imports: [NavbarComponent, RouterLink],
   templateUrl: './delete-employee.component.html',
   styleUrl: './delete-employee.component.css'
 })
