@@ -102,48 +102,52 @@ export class UpdateEmployeeComponent implements OnInit {
     let updatedEmployee: any = {};
     let update: any;
     let res: string;
+    try {
+      // Only update values that are changing within the form.
+      if (this.isChanging(formInput["fName-input"])) {
+        updatedEmployee.first_name = formInput["fName-input"];
+      }
 
-    // Only update values that are changing within the form.
-    if (this.isChanging(formInput["fName-input"])) {
-      updatedEmployee.first_name = formInput["fName-input"];
-    }
+      if (this.isChanging(formInput["lName-input"])) {
+        updatedEmployee.last_name = formInput["lName-input"];
+      }
 
-    if (this.isChanging(formInput["lName-input"])) {
-      updatedEmployee.last_name = formInput["lName-input"];
-    }
+      if (this.isChanging(formInput["email-input"])) {
+        updatedEmployee.email = formInput["email-input"];
+      }
 
-    if (this.isChanging(formInput["email-input"])) {
-      updatedEmployee.email = formInput["email-input"];
-    }
+      if (this.isChanging(formInput["designation-input"])) {
+        updatedEmployee.designation = formInput["designation-input"];
+      }
 
-    if (this.isChanging(formInput["designation-input"])) {
-      updatedEmployee.designation = formInput["designation-input"];
-    }
+      if (this.isChanging(formInput["salary-input"])) {
+        const salaryInput = formInput["salary-input"];
+        const salary = parseFloat(salaryInput);
 
-    if (this.isChanging(formInput["salary-input"])) {
-      const salaryInput = formInput["salary-input"];
-      const salary = parseFloat(salaryInput);
-      updatedEmployee.salary = salary;
-    }
+        if (isNaN(salary)) {
+          throw new Error();
+        }
+        updatedEmployee.salary = salary;
+      }
 
-    if (this.isChanging(formInput["department-input"])) {
-      updatedEmployee.department = formInput["department-input"];
-    }
+      if (this.isChanging(formInput["department-input"])) {
+        updatedEmployee.department = formInput["department-input"];
+      }
 
-    if (this.isChanging(formInput["photo-input"])) {
-      updatedEmployee.employee_photo = formInput["photo-input"];
-    }
+      if (this.isChanging(formInput["photo-input"])) {
+        updatedEmployee.employee_photo = formInput["photo-input"];
+      }
 
-    if (this.isChanging(formInput["gender-input"])) {
-      updatedEmployee.gender = formInput["gender-input"];
-    }
+      if (this.isChanging(formInput["gender-input"])) {
+        updatedEmployee.gender = formInput["gender-input"];
+      }
 
-    update = await this.updateEmployee(this.employeeId, updatedEmployee);
+      update = await this.updateEmployee(this.employeeId, updatedEmployee);
 
-    res = update;
-
-    if (res) {
+      res = update;
       this.router.navigate(["/employee"]);
+    } catch {
+      alert("ERROR: Something went wrong. Please try again!");
     }
   }
 }

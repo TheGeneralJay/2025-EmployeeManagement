@@ -91,3 +91,19 @@ section {
 button {
   width: 150px;
 }
+
+#notice {
+  text-align: center;
+  color: red;
+}
+
+#search-btn {
+  color: white;
+  border: 2px solid grey;
+  background-color: grey;
+}
+
+#search-btn:hover {
+  border: 2px solid rgb(93, 93, 93);
+  background-color: rgb(93, 93, 93);
+}

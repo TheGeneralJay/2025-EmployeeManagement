@@ -77,22 +77,24 @@ export class CreateEmployeeComponent {
     let res: string;
 
     // Build the new employee from form inputs.
-    newEmployee = await this.createEmployee(
-      formInput["fName-input"],
-      formInput["lName-input"],
-      formInput["email-input"],
-      formInput["designation-input"],
-      salary,
-      formInput["doj-input"],
-      formInput["department-input"],
-      formInput["photo-input"],
-      formInput["gender-input"]
-    );
+    try {
+      newEmployee = await this.createEmployee(
+        formInput["fName-input"],
+        formInput["lName-input"],
+        formInput["email-input"],
+        formInput["designation-input"],
+        salary,
+        formInput["doj-input"],
+        formInput["department-input"],
+        formInput["photo-input"],
+        formInput["gender-input"]
+      );
 
-    res = newEmployee;
+      res = newEmployee;
 
-    // If this works, navigate back to the employee list.
-    if (res) {
+      this.router.navigate(["/employee"]);
+    } catch {
+      alert("ERROR: Something went wrong. Please try again!");
       this.router.navigate(["/employee"]);
     }
   }

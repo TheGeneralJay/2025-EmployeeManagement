@@ -6,23 +6,23 @@
   - [x] Use `Router` for login.
   - [x] Use `Router` for signup.
   - [x] Use `Router` for employee components.
-- [ ] Login and Signup Screens.
-  - [ ] Form validations on login.
-  - [ ] Form validations on signup.
+- [x] Login and Signup Screens.
+  - [x] Form validations on login.
+  - [x] Form validations on signup.
   - [x] Use `Reactive` or `template forms` components to manage input states.
-- [ ] Session Management.
-  - [ ] Store user session token in `service or dependency injection` to persist authentication.
-- [ ] Employee Management.
-  - [ ] After login, send user to `Employee List` screen (tabular format).
-  - [ ] Apply CRUD operations from assignment 1 backend.
+- [x] Session Management.
+  - [x] Store user session token in `service or dependency injection` to persist authentication.
+- [x] Employee Management.
+  - [x] After login, send user to `Employee List` screen (tabular format).
+  - [x] Apply CRUD operations from assignment 1 backend.
     - [x] Add Employee.
     - [x] View Details.
-    - [ ] Update Information.
-    - [ ] Delete Employee.
-- [ ] Search and File Upload Functionality.
-  - [ ] Add employee search by department / position.
-- [ ] User Experience.
-  - [ ] Material-UI, Bootstrap, or custom CSS.
-  - [ ] Responsive components.
-- [ ] Logout and Redirect.
-  - [ ] Logout button clears user sessions and redirects user to login screen.
+    - [x] Update Information.
+    - [x] Delete Employee.
+- [x] Search and File Upload Functionality.
+  - [x] Add employee search by department / position.
+- [x] User Experience.
+  - [x] Material-UI, Bootstrap, or custom CSS.
+  - [x] Responsive components.
+- [x] Logout and Redirect.
+  - [x] Logout button clears user sessions and redirects user to login screen.

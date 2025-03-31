@@ -54,11 +54,13 @@ export class RegisterComponent {
     let register: any;
     let res: string;
 
-    register = await this.signup(formInput["email-input"], formInput["username-input"], formInput["password-input"]);
-    res = register
-
-    if (res) {
+    try {
+      register = await this.signup(formInput["email-input"], formInput["username-input"], formInput["password-input"]);
+      res = register
       this.router.navigate(["/login"]);
+    } catch {
+      alert("ERROR: There was an error while registering. Please try again.");
+      this.router.navigate(["/register"]);
     }
   }
 }

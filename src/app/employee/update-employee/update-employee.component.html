@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
 <h2>Update Employee</h2>
 <div>
+  <p id="notice">Please fill out every field.</p>
   <form
     id="update-emp-form"
     #update_employee="ngForm"
@@ -79,9 +80,8 @@
 
       <label class="form-label" for="photo-input">Employee Photo</label>
       <input
-        type="text"
+        type="file"
         class="form-control"
-        placeholder="{{ employee.employee_photo }}"
         name="photo-input"
         id="photo-input"
         ngModel

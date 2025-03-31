@@ -55,16 +55,19 @@ export class LoginComponent {
     let login: any;
     let res: string;
 
-    login = await this.login(formInput["username-input"], formInput["password-input"]);
-    res = login
+    try {
+      login = await this.login(formInput["username-input"], formInput["password-input"]);
+      res = login
 
-    if (res) {
       const authId = short.generate();
 
       localStorage.setItem("loggedIn", "true");
       localStorage.setItem("sessionId", authId);
 
       this.router.navigate(["/employee"]);
+    } catch {
+      alert("ERROR: There was an error logging in. Please try again.");
+      this.router.navigate(["/login"]);
     }
   }
 }
