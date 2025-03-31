@@ -17,12 +17,14 @@ export class EmployeeComponent implements OnInit {
   constructor(private router: Router) {};
 
   async ngOnInit() {
+    // On init, get all employees so that they display in the page.
     await this.getAllEmployees();
   }
 
   async getAllEmployees() {
     let req: any;
 
+    // Query for the GQL request.
     const document = gql`
       query GetEmployees {
         getEmployees {
@@ -41,7 +43,7 @@ export class EmployeeComponent implements OnInit {
         }
       }
     `
-
+    // Request builder.
     req = await request(
       uri,
       document

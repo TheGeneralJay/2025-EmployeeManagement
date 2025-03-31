@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { gql, request } from 'graphql-request';
 import { FormsModule, NgForm } from '@angular/forms';
-import { last } from 'rxjs';
 import { uri } from '../../graphql/graphql.provider';
 
 @Component({
@@ -25,6 +24,7 @@ export class CreateEmployeeComponent {
     employeePhoto: String,
     gender: String
   ) {
+    // Mutation request for GQL.
     const document = gql`
       mutation CreateEmployee($employeeInput: EmployeeInput) {
         createEmployee(employeeInput: $employeeInput) {
@@ -42,7 +42,7 @@ export class CreateEmployeeComponent {
         }
       }
     `
-
+    // Assign variables to use with the request.
     const variables = {
       employeeInput: {
         first_name: firstName,
@@ -57,6 +57,7 @@ export class CreateEmployeeComponent {
       }
     }
 
+    // Build the request.
     const req = await request(
       uri,
       document,
@@ -69,11 +70,12 @@ export class CreateEmployeeComponent {
   async onSubmit(createEmployeeForm: NgForm) {
     const formInput = createEmployeeForm.form.value;
     const salaryInput = formInput["salary-input"];
-    const salary = parseFloat(salaryInput);
+    const salary = parseFloat(salaryInput); // Forces salary to be a float to avoid error.
 
     let newEmployee: any;
     let res: string;
 
+    // Build the new employee from form inputs.
     newEmployee = await this.createEmployee(
       formInput["fName-input"],
       formInput["lName-input"],
@@ -88,6 +90,7 @@ export class CreateEmployeeComponent {
 
     res = newEmployee;
 
+    // If this works, navigate back to the employee list.
     if (res) {
       this.router.navigate(["/employee"]);
     }
